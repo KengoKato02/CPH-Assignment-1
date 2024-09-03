@@ -1,20 +1,15 @@
-function getFullName(firstName, lastName) {
- return `Your full name is: ${firstName} ${lastName}`;
-}
+var myValue = "Hello, World!";
+document.getElementById("output").innerHTML = myValue;
 
-function getRectArea(width, height) {
- return `Your calculated ares is: ${width * height}`;
-}
+var hoverButton = document.getElementById("hoverButton");
+var hiddenMessage = document.getElementById("hiddenMessage");
 
-function getDistance(speed, time) {
- const dist = speed * time;
- return `You have travelled ${dist} km`;
-}
+hoverButton.addEventListener("mouseover", function() {
+    hiddenMessage.classList.remove("hidden");
+    hiddenMessage.classList.add("visible");
+});
 
-const calculator = {
- fullName: getFullName('Kengo', 'Kato'),
- rectArea: getRectArea(10, 20),
- distance: getDistance(100, 2)
-};
-
-console.log(calculator);
+hoverButton.addEventListener("mouseout", function() {
+    hiddenMessage.classList.remove("visible");
+    hiddenMessage.classList.add("hidden");
+});

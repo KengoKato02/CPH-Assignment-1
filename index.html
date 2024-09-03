@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
- <title>Display JS Values</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display JS Values</title>
+    <link rel="stylesheet" href="global.css">
 </head>
 <body>
- <h1>JavaScript Values</h1>
+    <h1>JavaScript Values</h1>
 
- <p id="output"></p>
+    <!-- Paragraph to display the JavaScript value -->
+    <p id="output"></p>
 
- <script>
-  // JavaScript code goes here
-  var myValue = "Hello, World!";
-  document.getElementById("output").innerHTML = myValue;
- </script>
+    <!-- Button that triggers the hover effect -->
+    <button id="hoverButton">Hover over me</button>
+
+    <!-- Hidden message that will be displayed on hover -->
+    <div id="hiddenMessage" class="hidden">This is a hidden message revealed on hover!</div>
+
+    <script src="index.js"></script>
 </body>
 </html>
