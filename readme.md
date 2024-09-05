@@ -84,12 +84,13 @@ The **Hidden Message Excercise** is a simple web page that displays a hidden mes
 ## Rubber Ducky
 
 ### Overview
-The **Rubber Ducky Excercise** is a simple web page that displays a rubber duck image and a button. When the button is clicked, the duck image changes to a different image. The project demonstrates how to manipulate the DOM using JavaScript and CSS to change the appearance of elements as well as use local storage to save messages. Try to find the hidden message easter egg if you can!
+The **Rubber Ducky Excercise** is a simple web page that give you a rubber duxk which helps you debug. The project demonstrates how to use local storage to save messages, select certain elements to add to a list and make the Mr. Duck respond to you accordingly. Try to find the hidden message easter egg if you can!
 
 ### Features:
 - Displays a hidden message.
 - Ask the rubber duck something with a response.
 - Save the message to local storage and display within the application.
+- Select your issue and see how Mr Duck responds to your problem!
 
 ---
 
