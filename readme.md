@@ -65,18 +65,41 @@ The **Array Object Excercise** involves working with objects to manage student d
 
 ---
 
+## HTML
+**Hidden Message**, **Rubber Duck**. Each project demonstrates different UI development concepts, including HTML, CSS, and basic manipulation using JS.
+
+---
+
+## Hidden Message
+
+### Overview
+The **Hidden Message Excercise** is a simple web page that displays a hidden message when a button is clicked. The project demonstrates how to manipulate the DOM using JavaScript and CSS to show and hide elements.
+
+### Features:
+- Display a hidden message when a button is hovered.
+- Hide the message when the button is un-hovered.
+
+---
+
+## Rubber Ducky
+
+### Overview
+The **Rubber Ducky Excercise** is a simple web page that displays a rubber duck image and a button. When the button is clicked, the duck image changes to a different image. The project demonstrates how to manipulate the DOM using JavaScript and CSS to change the appearance of elements as well as use local storage to save messages. Try to find the hidden message easter egg if you can!
+
+### Features:
+- Displays a hidden message.
+- Ask the rubber duck something with a response.
+- Save the message to local storage and display within the application.
+
+---
+
 ## How to Run
 
 1. Clone the repository to your local machine.
 2. Open each project file in your preferred JavaScript environment (e.g., Node.js or browser console).
-3. Execute the functions or class methods as described above.
+3. Execute the functions or class methods as described above. For JS please run in your terminal using `node <filename>.js` and for HTML open the file in your browser.
 
 ---
 
 ### Author
 **Kengo Kato**
-
----
-
-### License
-This project is licensed under the MIT License.
