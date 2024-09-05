@@ -1,6 +1,6 @@
 # School Exercises
 
-This repository consists of numerous JavaScript & HTML and can be found in their respective folders. 
+This repository consists of numerous JavaScript & HTML excercises, and can be found in their respective folders. 
 
 ## JS
 **Calculator.js**, **Car.js**, **Cat.js**, **Array.js**, **Array-Objects.js**. Each project demonstrates different programming concepts, including functions, classes, and basic object-oriented principles.
