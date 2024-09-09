@@ -65,6 +65,72 @@ The **Array Object Excercise** involves working with objects to manage student d
 
 ---
 
+## Loops
+
+### Overview
+The **Loops** folder contains various exercises involving loops, arrays, objects, and number manipulation. Below are the specific projects within this folder.
+
+---
+
+## Loops Array
+### Overview
+The Loops Array exercise demonstrates iteration over an array of various data types. It logs each item and its data type, determining whether it's a string, number, or boolean.
+
+### Features
+- Loops through a given array.
+- Logs each value along with its type (number, string, or boolean).
+
+---
+
+## Loops Objects
+### Overview
+The **Loop Objects** exercise demonstrates iterating through an array of mixed data types (numbers and strings) and dynamically checking the type of each item. The type is logged alongside the value, identifying if it's a string, number, or boolean.
+
+### Features
+- Loops through an array.
+- Logs each item and its corresponding data type.
+- Works with numbers, strings, and booleans.
+
+---
+
+## Find Larger
+### Overview
+The **Find Largest** function takes four parameters and returns the largest number among them using basic conditional logic and loops.
+
+### Features
+- Accepts four numerical inputs.
+- Returns the largest of the four numbers.
+
+---
+
+## Highlighted Numbers
+### Overview
+The **Highlighted Numbers** project involves a webpage that dynamically generates numbers between 1 and 20. Each number is styled differently based on whether it's even or odd. The numbers can be clicked to toggle highlighting, visually emphasizing the selected number.
+
+### Features
+- Dynamically creates div elements for numbers 1-20.
+- Styles even numbers with a blue background and odd numbers with a red background.
+- Allows users to highlight a number when clicked, removing the highlight from any previously selected number.
+
+---
+
+## Higher or Lower
+### Overview
+The **Higher-Lower** Guessing Game is a JavaScript application where a random number between 1 and 100 is selected, and the user is prompted to guess the number. After each guess, the user is informed whether the guess is too high, too low, or correct. The game keeps track of the number of guesses made.
+
+### Features
+- Randomly selects a number between 1 and 100.
+- Informs the user if their guess is higher or lower than the random number.
+- Tracks and displays the number of guesses made.
+
+---
+
+### Features:
+- **Add Grades**: Append new grades to a student's grade list.
+- **Update Student Name**: Modify a student's name within their record.
+
+---
+
 ## HTML
 **Hidden Message**, **Rubber Duck**. Each project demonstrates different UI development concepts, including HTML, CSS, and basic manipulation using JS.
 
