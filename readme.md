@@ -132,7 +132,7 @@ The **Higher-Lower** Guessing Game is a JavaScript application where a random nu
 ---
 
 ## HTML
-**Hidden Message**, **Rubber Duck**. Each project demonstrates different UI development concepts, including HTML, CSS, and basic manipulation using JS.
+**Hidden Message**, **Rubber Duck**. Each project demonstrates different UI development concepts, including HTML, CSS, and basic manipulation using JS. The application will also prompt you to input your name upon load, dynamically welcome you and put a timestamp on each message that is saved which will be displayed as a title and can be seen as a hover.
 
 ---
 

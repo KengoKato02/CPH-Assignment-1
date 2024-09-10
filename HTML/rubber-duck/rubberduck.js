@@ -39,12 +39,26 @@ problemSelect.addEventListener("change", function() {
 
 window.addEventListener("load", function() {
     var storedMessages = localStorage.getItem("messages");
+    var storedUser = localStorage.getItem("user");
+    var firstVisit = localStorage.getItem("firstVisit");
+
+    if (storedUser) {
+        var user = JSON.parse(storedUser);
+        
+        if (firstVisit === "true") {
+            greetings.textContent = "Hello, " + user.name + "! Mr. Duck sees that it is your first time visiting and greets you.";
+        } else {
+            greetings.textContent = "Welcome back, " + user.name + "! Mr. Duck is happy to see you again.";
+        }
+    } else {
+        greetings.textContent = "Hello! Mr. Duck says nice meeting you.";
+    }
+
     if (storedMessages) {
         messages = JSON.parse(storedMessages);
         displayMessages();
     }
-    const name = prompt("What is your name?");
-    greetings.textContent = "Hello, " + name + "! How can Mr. Duck help you today?";
+    
 });
 
 sendButton.addEventListener("click", function() {
