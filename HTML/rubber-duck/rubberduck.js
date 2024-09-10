@@ -4,6 +4,7 @@ var responseMessage = document.getElementById("responseMessage");
 var logo = document.getElementById("logo");
 var duckMessage = document.getElementById("duckMessage");
 var messageList = document.getElementById("messageList");
+var greetings = document.getElementById("greetings");
 
 var messages = [];
 
@@ -42,16 +43,19 @@ window.addEventListener("load", function() {
         messages = JSON.parse(storedMessages);
         displayMessages();
     }
+    const name = prompt("What is your name?");
+    greetings.textContent = "Hello, " + name + "! How can Mr. Duck help you today?";
 });
 
 sendButton.addEventListener("click", function() {
     var problemText = problemInput.value;
-
+    
     if (problemText.trim() === "") {
         responseMessage.textContent = "Please describe your problem before sending it to Mr. Duck.";
     } else {
         responseMessage.textContent = "Thank you for sharing your problem with Mr. Duck. Remember, sometimes just talking it out helps!";
-        messages.push(problemText);
+        var messageWithTimestamp = { text: problemText, time: new Date().toLocaleString() };
+        messages.push(messageWithTimestamp);
         localStorage.setItem("messages", JSON.stringify(messages));
         displayMessages();
     }
@@ -63,7 +67,8 @@ function displayMessages() {
     messageList.innerHTML = "";
     messages.forEach(function(message) {
         var li = document.createElement("li");
-        li.textContent = message;
+        li.textContent = message.text;
+        li.setAttribute("title", "Sent on: " + message.time);
         messageList.appendChild(li);
     });
 }
