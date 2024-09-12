@@ -7,6 +7,12 @@ var nameError = document.getElementById("nameError");
 var emailError = document.getElementById("emailError");
 var ageError = document.getElementById("ageError");
 
+function isValidCphBusinessEmail(email) {
+    const trimmedEmail = email.trim().toLowerCase();
+    return trimmedEmail.endsWith("@cphbusiness.dk") && trimmedEmail.indexOf("@") === trimmedEmail.lastIndexOf("@");
+}
+
+
 userForm.addEventListener("submit", function(event) {
     event.preventDefault();
     var isValid = true;
@@ -24,9 +30,8 @@ userForm.addEventListener("submit", function(event) {
     }
 
     if (emailInput.value.trim() !== "") {
-        var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,6}$/;
-        if (!emailPattern.test(emailInput.value.trim())) {
-            emailError.textContent = "Please enter a valid email address.";
+        if (!isValidCphBusinessEmail(emailInput.value)) {
+            emailError.textContent = "Please enter a valid @cphbusiness.dk email address.";
             isValid = false;
         }
     }
