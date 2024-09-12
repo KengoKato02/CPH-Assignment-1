@@ -164,3 +164,17 @@ button[type="submit"] {
 button[type="submit"]:hover {
  background-color: #e4d21f;
 }
+
+#forceAnswerButton {
+ margin-left: 10px;
+ padding: 5px 10px;
+ background-color: #4CAF50;
+ color: white;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+}
+
+#forceAnswerButton:hover {
+ background-color: #45a049;
+}

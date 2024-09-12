@@ -12,6 +12,17 @@ var problemSelect = document.getElementById("problemSelect");
 var problemList = document.getElementById("problemList");
 var selectedProblems = [];
 
+var forceAnswerButton = document.createElement("button");
+forceAnswerButton.textContent = "Force Answer";
+forceAnswerButton.id = "forceAnswerButton";
+
+function addForceAnswerButton() {
+    var header = document.querySelector("header");
+    if (header) {
+        header.appendChild(forceAnswerButton);
+    }
+}
+
 problemSelect.addEventListener("change", function() {
     var selectedProblem = problemSelect.value;
 
@@ -42,6 +53,14 @@ window.addEventListener("load", function() {
     var storedUser = localStorage.getItem("user");
     var firstVisit = localStorage.getItem("firstVisit");
 
+
+    addForceAnswerButton();
+
+    forceAnswerButton.addEventListener("click", async () => {
+        responseMessage.textContent = "Mr. Duck is thinking...";
+        await forceAnswer();
+    });
+
     if (storedUser) {
         var user = JSON.parse(storedUser);
         
@@ -60,6 +79,27 @@ window.addEventListener("load", function() {
     }
     
 });
+
+async function forceAnswer() {
+    try {
+        const response = await fetch('https://v2.jokeapi.dev/joke/Any');
+        const jokeData = await response.json();
+        
+        let joke;
+        if (jokeData.type === 'single') {
+            joke = jokeData.joke;
+        } else if (jokeData.type === 'twopart') {
+            joke = `${jokeData.setup}\n\n${jokeData.delivery}`;
+        } else {
+            throw new Error('Unexpected joke format');
+        }
+        
+        responseMessage.textContent = `Mr. Duck says: ${joke}`;
+    } catch (error) {
+        console.error('Error fetching joke:', error);
+        responseMessage.textContent = "Mr. Duck is feeling a bit confused right now. Try again later!";
+    }
+}
 
 sendButton.addEventListener("click", function() {
     var problemText = problemInput.value;
