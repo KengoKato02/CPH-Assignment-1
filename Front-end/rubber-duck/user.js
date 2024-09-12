@@ -12,6 +12,28 @@ function isValidCphBusinessEmail(email) {
     return trimmedEmail.endsWith("@cphbusiness.dk") && trimmedEmail.indexOf("@") === trimmedEmail.lastIndexOf("@");
 }
 
+function isProfane(text) {
+    const profaneWords = ['badword1', 'badword2', 'badword3']; 
+    return profaneWords.some(word => text.toLowerCase().includes(word));
+}
+
+nameInput.addEventListener('input', function() {
+    if (isProfane(this.value)) {
+        this.value = this.value.replace(/\S/g, '*');
+        nameError.textContent = "Please use appropriate language.";
+    } else {
+        nameError.textContent = "";
+    }
+});
+
+emailInput.addEventListener('input', function() {
+    if (isProfane(this.value)) {
+        this.value = this.value.replace(/\S/g, '*');
+        emailError.textContent = "Please use appropriate language.";
+    } else {
+        emailError.textContent = "";
+    }
+});
 
 userForm.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -27,11 +49,17 @@ userForm.addEventListener("submit", function(event) {
     } else if (!/^[a-zA-Z ]+$/.test(nameInput.value.trim())) {
         nameError.textContent = "Name can only contain letters and spaces.";
         isValid = false;
+    } else if (isProfane(nameInput.value)) {
+        nameError.textContent = "Please use appropriate language.";
+        isValid = false;
     }
 
     if (emailInput.value.trim() !== "") {
         if (!isValidCphBusinessEmail(emailInput.value)) {
             emailError.textContent = "Please enter a valid @cphbusiness.dk email address.";
+            isValid = false;
+        } else if (isProfane(emailInput.value)) {
+            emailError.textContent = "Please use appropriate language.";
             isValid = false;
         }
     }

@@ -80,7 +80,23 @@ window.addEventListener("load", function() {
     
 });
 
+function isProfane(text) {
+    const profaneWords = ['badword1', 'badword2', 'badword3']; // Add more words as needed
+    return profaneWords.some(word => text.toLowerCase().includes(word));
+}
+
+problemInput.addEventListener('input', function() {
+    if (isProfane(this.value)) {
+        this.value = this.value.replace(/\S/g, '*');
+        responseMessage.textContent = "Mr. Duck doesn't approve of such language!";
+    } else {
+        responseMessage.textContent = "";
+    }
+});
+
 async function forceAnswer() {
+     responseMessage.textContent = "Mr. Duck is thinking...";
+    
     try {
         const response = await fetch('https://v2.jokeapi.dev/joke/Any');
         const jokeData = await response.json();
@@ -94,7 +110,9 @@ async function forceAnswer() {
             throw new Error('Unexpected joke format');
         }
         
-        responseMessage.textContent = `Mr. Duck says: ${joke}`;
+        setTimeout(() => {
+            responseMessage.textContent = `Mr. Duck says: ${joke}`;
+        }, 2000); // 2 seconds
     } catch (error) {
         console.error('Error fetching joke:', error);
         responseMessage.textContent = "Mr. Duck is feeling a bit confused right now. Try again later!";
