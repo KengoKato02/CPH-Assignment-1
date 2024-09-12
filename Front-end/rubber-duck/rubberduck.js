@@ -95,20 +95,13 @@ problemInput.addEventListener('input', function() {
 });
 
 async function forceAnswer() {
-     responseMessage.textContent = "Mr. Duck is thinking...";
+    responseMessage.textContent = "Mr. Duck is thinking...";
     
     try {
         const response = await fetch('https://v2.jokeapi.dev/joke/Any');
         const jokeData = await response.json();
         
-        let joke;
-        if (jokeData.type === 'single') {
-            joke = jokeData.joke;
-        } else if (jokeData.type === 'twopart') {
-            joke = `${jokeData.setup}\n\n${jokeData.delivery}`;
-        } else {
-            throw new Error('Unexpected joke format');
-        }
+        let joke = jokeData.joke || `${jokeData.setup}\n\n${jokeData.delivery}`;
         
         setTimeout(() => {
             responseMessage.textContent = `Mr. Duck says: ${joke}`;
