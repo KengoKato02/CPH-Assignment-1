@@ -1,0 +1,14 @@
+{
+ "name": "nodejs-api",
+ "version": "1.0.0",
+ "description": "First API for Mr Duck",
+ "main": "server.js",
+ "scripts": {
+   "start": "node server.js"
+ },
+ "author": "",
+ "license": "ISC",
+ "dependencies": {
+   "mongoose": "^7.2.0"
+ }
+}
